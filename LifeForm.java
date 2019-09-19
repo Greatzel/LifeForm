@@ -6,6 +6,7 @@ public class LifeForm {
 	public String weapon;
 	public int magic;
 	public String type;
+	public String name;
 
 	public LifeForm() {
 		hitPoints = 100;
@@ -57,13 +58,21 @@ public class LifeForm {
 		this.type = type;
 	}
 
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
 	/*
 	 * Method name: isInRange Method checks if entered character stats are in range.
 	 */
 
 	@Override
 	public String toString() {
-		return "LifeForm [hitPoints=" + hitPoints + ", strength=" + strength + ", type=" + type + "]";
+		return "LifeForm [hitPoints=" + hitPoints + ", strength=" + strength + ", type=" + type + "]" + type + " [name=" + name + ", weapon=" + weapon + ", magic=" + magic;
 	}
 
 }
