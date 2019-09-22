@@ -1,10 +1,16 @@
-
+/*Name: Greatzel Unabia
+ * Class name: LifeForm V.09
+ * Base Class for Human, Dragon and Unicorn
+ * Class contains attributes: hit points, strength and type.
+ * child classes inherit all these attributes
+ * Contains methods:
+ * 1. Check Hit Points Range
+ * 2. Check Strength Points Range
+ * 3. To String*/
 public class LifeForm {
 
-	public int hitPoints;
-	public int strength;
-	public String weapon;
-	public int magic;
+	private int hitPoints;
+	private int strength;
 	public String type;
 
 	public LifeForm() {
@@ -33,22 +39,6 @@ public class LifeForm {
 		this.strength = strength;
 	}
 
-	public String getWeapon() {
-		return weapon;
-	}
-
-	public void setWeapon(String weapon) {
-		this.weapon = weapon;
-	}
-
-	public int getMagic() {
-		return magic;
-	}
-
-	public void setMagic(int magic) {
-		this.magic = magic;
-	}
-
 	public String getType() {
 		return type;
 	}
@@ -58,12 +48,32 @@ public class LifeForm {
 	}
 
 	/*
-	 * Method name: isInRange Method checks if entered character stats are in range.
+	 * Method name: LifeFormHitRange Method checks if entered character stats are in
+	 * the allowed range. if not then the program will assign the lowest value for
+	 * the attributes as punishment for not following instructions!
 	 */
+	public int LifeFormHitRange() {
+		if (hitPoints < 0 || hitPoints > 100) {
+			hitPoints = 1;
+		}
+		return hitPoints;
+	}
+
+	/*
+	 * Method name: LifeFormStrRange Method checks if entered character stats are in
+	 * the allowed range. if not then the program will assign the lowest value for
+	 * the attributes as punishment for not following instructions!
+	 */
+	public int LifeFormStrRange() {
+		if (strength < 0 || strength > 18) {
+			strength = 1;
+		}
+		return strength;
+	}
 
 	@Override
 	public String toString() {
-		return "LifeForm [hitPoints=" + hitPoints + ", strength=" + strength + ", type=" + type + "]";
+		return "Lifeform [hitPoints=" + hitPoints + ", strength=" + strength + ", type=" + type + "]";
 	}
 
 }
