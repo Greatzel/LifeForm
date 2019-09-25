@@ -28,6 +28,7 @@ public class LifeForm {
 	}
 
 	public void setHitPoints(int hitPoints) {
+		if (hitPoints > 0 || hitPoints < 100) 
 		this.hitPoints = hitPoints;
 	}
 
@@ -36,6 +37,9 @@ public class LifeForm {
 	}
 
 	public void setStrength(int strength) {
+		if (strength < 0 || strength > 18) {
+			strength = 15;
+		}
 		this.strength = strength;
 	}
 
